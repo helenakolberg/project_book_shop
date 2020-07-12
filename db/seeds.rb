@@ -1,6 +1,8 @@
 require('pry-byebug')
 require_relative('../models/author.rb')
+require_relative('../models/book.rb')
 
+Book.delete_all()
 Author.delete_all()
 
 author1 = Author.new({
@@ -26,6 +28,17 @@ author3 = Author.new({
 author1.save()
 author2.save()
 author3.save()
+
+book1 = Book.new({
+    'name' => "Angela's Ashes",
+    'description' => "A Memoir is a 1996 memoir by the Irish-American author Frank McCourt, with various anecdotes and stories of his childhood.",
+    'quantity' => 10,
+    'buying_cost' => 8,
+    'selling_price' => 12,
+    'author_id' => author1.id
+})
+
+book1.save()
 
 author3.delete()
 

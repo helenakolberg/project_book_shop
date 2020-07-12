@@ -15,4 +15,17 @@ class Book
         @author_id = options['author_id'].to_i
     end
 
+    def save()
+        sql = "INSERT INTO books (name, description, quantity, buying_cost, selling_price, author_id)
+        VALUES ($1, $2, $3, $4, $5, $6) RETURNING id"
+        values = [@name, @description, @quantity, @buying_cost, @selling_price, @author_id]
+        result = SqlRunner.run(sql, values)
+        @id = result[0]['id'].to_i
+    end
+
+    def self.delete_all()
+        sql = "DELETE FROM books"
+        SqlRunner.run(sql)
+    end
+
 end
