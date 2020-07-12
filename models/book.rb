@@ -16,7 +16,8 @@ class Book
     end
 
     def save()
-        sql = "INSERT INTO books (title, description, quantity, buying_cost, selling_price, author_id)
+        sql = "INSERT INTO books 
+        (title, description, quantity, buying_cost, selling_price, author_id)
         VALUES ($1, $2, $3, $4, $5, $6) RETURNING id"
         values = [@title, @description, @quantity, @buying_cost, @selling_price, @author_id]
         result = SqlRunner.run(sql, values)
@@ -49,6 +50,15 @@ class Book
         values = [id]
         result = SqlRunner.run(sql, values)
         return self.map_items(result)
+    end
+
+    def update()
+        sql = "UPDATE books SET
+        (title, description, quantity, buying_cost, selling_price, author_id)
+        = ($1, $2, $3, $4, $5, $6)
+        WHERE id = $7"
+        values = [@title, @description, @quantity, @buying_cost, @selling_price, @author_id, @id]
+        SqlRunner.run(sql, values)
     end
 
 

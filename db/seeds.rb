@@ -66,6 +66,10 @@ author1.bio = "Francis McCourt (19 August 1930 – 19 July 2009) was an Irish-Am
 He won a Pulitzer Prize for his book Angela's Ashes, a tragicomic memoir of the misery and squalor of his childhood."
 author1.update()
 
+book2.description = "A modern masterpiece from one of Italy's most acclaimed authors, 
+My Brilliant Friend is a rich, intense, and generous-hearted story about two friends, Elena and Lila."
+book2.update()
+
 
 binding.pry
 nil
