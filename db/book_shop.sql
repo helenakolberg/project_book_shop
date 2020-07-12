@@ -10,7 +10,7 @@ CREATE TABLE authors (
 
 CREATE TABLE books (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
+    title VARCHAR(255),
     description VARCHAR(255),
     quantity INT,
     buying_cost INT,

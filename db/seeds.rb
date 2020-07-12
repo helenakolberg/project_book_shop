@@ -28,7 +28,7 @@ author2.save()
 author3.save()
 
 book1 = Book.new({
-    'name' => "Angela's Ashes",
+    'title' => "Angela's Ashes",
     'description' => "Angela's Ashes is a 1996 memoir by the Irish-American author Frank McCourt, 
     with various anecdotes and stories of his childhood.",
     'quantity' => 10,
@@ -37,7 +37,7 @@ book1 = Book.new({
     'author_id' => author1.id
 })
 book2 = Book.new({
-    'name' => "My Brilliant Friend",
+    'title' => "My Brilliant Friend",
     'description' => "A modern masterpiece from one of Italy s most acclaimed authors, 
     My Brilliant Friend is a rich, intense, and generous-hearted story about two friends, Elena and Lila.",
     'quantity' => 15,
@@ -46,7 +46,7 @@ book2 = Book.new({
     'author_id' => author2.id
 })
 book3 = Book.new({
-    'name' => "Harry Potter and the Goblet of Fire",
+    'title' => "Harry Potter and the Goblet of Fire",
     'description' => "The Triwizard Tournament is to be held at Hogwarts. 
     Only wizards who are over seventeen are allowed to enter – but that doesn't stop Harry dreaming that he will win the competition.",
     'quantity' => 20,
