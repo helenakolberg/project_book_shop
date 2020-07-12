@@ -3,7 +3,8 @@ DROP TABLE IF EXISTS authors;
 
 CREATE TABLE authors (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
     bio VARCHAR(255)
 );
 

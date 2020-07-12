@@ -3,18 +3,19 @@ require_relative('../db/sql_runner.rb')
 class Author
 
     attr_reader :id
-    attr_accessor :name, :bio
+    attr_accessor :first_name, :last_name, :bio
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
-        @name = options['name']
+        @first_name = options['first_name']
+        @last_name = options['last_name']
         @bio = options['bio']
     end
 
     def save()
-        sql = "INSERT INTO authors (name, bio)
-        VALUES ($1, $2) RETURNING id"
-        values = [@name, @bio]
+        sql = "INSERT INTO authors (first_name, last_name, bio)
+        VALUES ($1, $2, $3) RETURNING id"
+        values = [@first_name, @last_name, @bio]
         result = SqlRunner.run(sql, values)
         @id = result[0]['id'].to_i
     end
