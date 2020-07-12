@@ -11,4 +11,12 @@ class Author
         @bio = options['bio']
     end
 
+    def save()
+        sql = "INSERT INTO authors (name, bio)
+        VALUES ($1, $2) RETURNING id"
+        values = [@name, @bio]
+        result = SqlRunner.run(sql, values)
+        @id = result[0]['id'].to_i
+    end
+
 end
