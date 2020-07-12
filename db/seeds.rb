@@ -29,9 +29,6 @@ author3.save()
 
 author3.delete()
 
-Author.all()
-
-
 
 
 binding.pry
