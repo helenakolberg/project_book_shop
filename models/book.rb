@@ -34,4 +34,16 @@ class Book
         SqlRunner.run(sql, values)
     end
 
+    def self.map_items(data)
+        return data.map { |book| Book.new(book) }
+    end
+
+    def self.all()
+        sql = "SELECT * FROM books"
+        result = SqlRunner.run(sql)
+        return self.map_items(result)
+    end
+
+
+
 end
