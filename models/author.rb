@@ -48,6 +48,14 @@ class Author
         return self.map_items(result)
     end
 
+    def update()
+        sql = "UPDATE authors SET
+        (first_name, last_name, bio) = ($1, $2, $3)
+        WHERE id = $4"
+        values = [@first_name, @last_name, @bio, @id]
+        SqlRunner.run(sql, values)
+    end
+
 
 
 end
