@@ -44,8 +44,9 @@ class Author
     def self.find_by_id(id)
         sql = "SELECT * FROM authors WHERE id = $1"
         values = [id]
-        result = SqlRunner.run(sql, values)
-        return self.map_items(result)
+        result = SqlRunner.run(sql, values).first
+        author = Author.new(result)
+        return author
     end
 
     def update()
@@ -64,7 +65,7 @@ class Author
     end
 
     def full_name()
-        return "#{@first_name} " + "#{@last_name}"
+        return "#{@first_name} #{@last_name}"
     end
 
 end
