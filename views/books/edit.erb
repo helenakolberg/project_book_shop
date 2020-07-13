@@ -1,0 +1,44 @@
+<h1>Edit <%=@book.title%></h1>
+
+<form method ="post" action="/books/<%=@book.id%>">
+    <div>
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" value="<%=@book.title%>"/>
+    </div>
+<br>
+    <div>
+        <label for="author_select">Select author:</label>
+        <select name="author_id" id="author_select">
+            <%for author in @authors%>
+                <%if (author.id == @book.author_id)%>
+                    <option value=<%=author.id%> selected><%=author.full_name%></option>
+                <%else%>
+                    <option value=<%=author.id%>><%=author.full_name%></option>
+                <%end%>
+            <%end%>
+        </select>
+    </div>
+<br>    
+    <div>
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" value="<%=@book.description%>"/>
+    </div>
+<br>
+    <div>
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" id="quantity" value="<%=@book.quantity%>"/>
+    </div>
+<br>
+    <div>
+        <label for="buying_cost">Buying cost:</label>
+        <input type="number" name="buying_cost" id="buying_cost" value="<%=@book.buying_cost%>"/>
+    </div>
+<br>
+    <div>
+        <label for="selling_price">Selling price:</label>
+        <input type="number" name="selling_price" id="selling_price" value="<%=@book.selling_price%>"/>
+    </div>
+<br>
+    <div>
+        <input type="submit" value="Add Book">
+    </div>
