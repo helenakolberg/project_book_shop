@@ -61,6 +61,12 @@ class Book
         SqlRunner.run(sql, values)
     end
 
+    def sell_book()
+        sql = "UPDATE books SET quantity = $1 WHERE id = $2"
+        values = [@quantity - 1, @id]
+        SqlRunner.run(sql, values)
+    end
+
 
 
 end
