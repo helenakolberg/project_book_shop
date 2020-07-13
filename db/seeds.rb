@@ -54,10 +54,20 @@ book3 = Book.new({
     'selling_price' => 15,
     'author_id' => author3.id
 })
+book4 = Book.new({
+    'title' => "The Story of a New Name",
+    'description' => "Following on from the bestselling My Brilliant Friend, the second part of Ferrante’s 
+    mesmerising Neapolitan quartet continues to map the intricate and complex relationship between Elena and Lina.",
+    'quantity' => 10,
+    'buying_cost' => 9,
+    'selling_price' => 15,
+    'author_id' => author2.id
+})
 
 book1.save()
 book2.save()
 book3.save()
+book4.save()
 
 book3.delete()
 author3.delete()
