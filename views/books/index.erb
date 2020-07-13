@@ -16,7 +16,13 @@
         </tr>
         <tr>
             <th>Quantity:</th>
-            <td><%=book.quantity%></td>
+            <td><%=book.quantity%>
+                    <%if (book.quantity <= 5) && (book.quantity > 0)%>
+                        <%="Low stock"%>
+                    <%elsif (book.quantity == 0)%>
+                        <%="Out of stock"%>
+                    <%end%>
+            </td>
         </tr>
         <tr>
             <th>Buying cost:</th>
