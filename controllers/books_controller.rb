@@ -14,3 +14,8 @@ get '/books/new' do
     @authors = Author.all()
     erb(:"books/new")
 end
+
+post '/books' do
+    Book.new(params).save
+    redirect '/books'
+end
