@@ -33,6 +33,11 @@
             <td><%=book.selling_price%></td>
         </tr>
     </table>
-    <a href="/books/<%=book.id%>/delete"><button>Delete</button></a>
+    <div>
+        <a href="/books/<%=book.id%>"><button>View</button></a>
+    </div>
+    <div>
+        <a href="/books/<%=book.id%>/delete"><button>Delete</button></a>
+    </div>
     <hr/>
 <%end%>    

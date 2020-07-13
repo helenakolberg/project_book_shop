@@ -48,8 +48,8 @@ class Book
     def self.find_by_id(id)
         sql = "SELECT * FROM books WHERE id = $1"
         values = [id]
-        result = SqlRunner.run(sql, values)
-        return self.map_items(result)
+        result = SqlRunner.run(sql, values).first
+        return Book.new(result)
     end
 
     def update()
