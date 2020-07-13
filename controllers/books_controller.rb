@@ -16,6 +16,17 @@ get '/books/new' do
 end
 
 post '/books' do
-    Book.new(params).save
+    Book.new(params).save()
+    redirect '/books'
+end
+
+get '/books/:id' do
+    @book = Book.find_by_id(params['id'])
+    erb(:"books/show")
+  end
+
+post '/books/:id/delete' do
+    book = Book.find_by_id(params['id'])
+    book.delete()
     redirect '/books'
 end
