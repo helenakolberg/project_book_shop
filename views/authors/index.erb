@@ -23,5 +23,14 @@
             </td>
         </tr>
     </table>
+    <div>
+        <a href="/authors/<%=author.id%>"><button>View</button></a>
+    </div>
+    <div>
+        <a href="/authors/<%=author.id%>/edit"><button>Edit</button></a>
+    </div>
+    <div>
+        <form method="post" action="/authors/<%=author.id%>/delete"><input type="submit" value="Delete"></form>
+    </div>
   <hr/>  
 <%end%>    

@@ -23,3 +23,20 @@ get '/authors/:id' do
     @author = Author.find_by_id(params['id'])
     erb(:"authors/show")
 end
+
+post '/authors/:id/delete' do
+    author = Author.find_by_id(params['id'])
+    author.delete()
+    redirect '/authors'
+end
+
+get '/authors/:id/edit' do
+    @author = Author.find_by_id(params['id'])
+    erb(:"authors/edit")
+end
+
+post '/authors/:id' do
+    author = Author.new(params)
+    author.update()
+    redirect "authors/#{params['id']}"
+end

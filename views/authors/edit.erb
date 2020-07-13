@@ -1,0 +1,22 @@
+<h1>Edit <%=@author.full_name%></h1>
+
+<form method ="post" action="/authors/<%=@author.id%>">
+    <div>
+        <label for="last_name">Last name:</label>
+        <input type="text" name="last_name" id="last_name" value="<%=@author.last_name%>"/>
+    </div>
+<br>    
+    <div>
+        <label for="first_name">First name:</label>
+        <input type="text" name="first_name" id="first_name" value="<%=@author.first_name%>"/>
+    </div>
+<br>
+    <div>
+        <label for="bio">Bio:</label>
+        <input type="text" name="bio" id="bio" value="<%=@author.bio%>"/>
+    </div>
+<br>
+    <div>
+        <input type="submit" value="Submit Changes">
+    </div>
+</form>
