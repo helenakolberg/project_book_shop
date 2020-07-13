@@ -1,1 +1,27 @@
 <h1>All Books</h1>
+
+<%for book in @books%>
+    <table>
+        <tr>
+            <td>Title:</td>
+            <td><%=book.title%></td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td><%=book.description%></td>
+        </tr>
+        <tr>
+            <td>Quantity:</td>
+            <td><%=book.quantity%></td>
+        </tr>
+        <tr>
+            <td>Buying cost:</td>
+            <td><%=book.buying_cost%></td>
+        </tr>
+        <tr>
+            <td>Selling price:</td>
+            <td><%=book.selling_price%></td>
+        </tr>
+    </table>
+    <hr/>
+<%end%>    
