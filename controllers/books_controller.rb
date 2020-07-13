@@ -30,3 +30,15 @@ post '/books/:id/delete' do
     book.delete()
     redirect '/books'
 end
+
+get 'books/:id/edit' do
+    @book = Book.find_by_id(params['id'])
+    @authors = Author.all()
+    erb(:"books/edit")
+end
+
+post 'books/:id' do
+    book = Book.new(params)
+    book.update()
+    redirect "books/#{params['id']}"
+end
