@@ -1,1 +1,26 @@
 <h1>All Authors</h1>
+
+<%for author in @authors%>
+    <table>
+        <tr>
+            <th>Last name:</th>
+            <td><%=author.last_name%></td>
+        </tr>
+        <tr>
+            <th>First name:</th>
+            <td><%=author.first_name%></td>
+        </tr>
+        <tr>
+            <th>Bio:</th>
+            <td><%=author.bio%></td>
+        </tr>
+        <tr>
+            <th>Books:</th>
+            <td><%for book in author.books%>
+                    <%=book.title%><br>
+                <%end%>
+            </td>
+        </tr>
+    </table>
+  <hr/>  
+<%end%>    
