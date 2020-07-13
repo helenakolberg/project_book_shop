@@ -18,3 +18,8 @@ post '/authors' do
     Author.new(params).save()
     redirect '/authors'
 end
+
+get '/authors/:id' do
+    @author = Author.find_by_id(params['id'])
+    erb(:"authors/show")
+end

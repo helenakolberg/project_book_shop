@@ -1,0 +1,15 @@
+<h1><%=@author.full_name%></h1>
+
+<table>
+        <tr>
+            <th>Bio:</th>
+            <td><%=@author.bio%></td>
+        </tr>
+        <tr>
+            <th>Books:</th>
+            <td><%for book in @author.books%>
+                    <a href="/books/<%=book.id%>"><%=book.title%></a>
+                    <br>
+                <%end%></td>
+        </tr>
+</table>
