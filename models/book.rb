@@ -67,6 +67,13 @@ class Book
         SqlRunner.run(sql, values)
     end
 
+    def author()
+        sql = "SELECT * FROM authors WHERE id = $1"
+        values = [@author_id]
+        result = SqlRunner.run(sql, values)
+        return Author.map_items(result)
+    end
+
 
 
 end
