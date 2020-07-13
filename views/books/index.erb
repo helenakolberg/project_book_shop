@@ -37,6 +37,9 @@
         <a href="/books/<%=book.id%>"><button>View</button></a>
     </div>
     <div>
+        <a href="/books/<%=book.id%>/edit"><button>Edit</button></a>
+    </div>
+    <div>
         <form method="post" action="/books/<%=book.id%>/delete"><input type="submit" value="Delete"></form>
     </div>
     <hr/>
