@@ -11,6 +11,10 @@
             <td><%=book.description%></td>
         </tr>
         <tr>
+            <th>Genre:</th>
+            <td><%=book.genre.type%></td>
+        </tr>
+        <tr>
             <th>Quantity:</th>
             <td><%=book.quantity%>
                     <%if (book.quantity <= 5) && (book.quantity > 0)%>
