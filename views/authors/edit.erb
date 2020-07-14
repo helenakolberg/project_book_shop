@@ -17,6 +17,13 @@
     </div>
 <br>
     <div>
+        <label for="status_select">Select status:</label>
+        <select name="select" id="status_select">
+            <option value="active" <%="selected" if @author.status == "active"%>>active</option>
+            <option value="deactivated" <%="selected" if @author.status == "deactivated"%>>deactivated</option>
+        </select>
+    </div>
+    <div>
         <input type="submit" value="Submit Changes">
     </div>
 </form>
