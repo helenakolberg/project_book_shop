@@ -13,3 +13,13 @@ get '/genres/:id/books' do
     @genre = Genre.find_by_id(params['id'])
     erb(:"genres/books")
 end
+
+get '/genres/new' do
+    @genres = Genre.all()
+    erb(:"genres/new")
+end
+
+post '/genres' do
+    Genre.new(params).save()
+    redirect '/genres'
+end

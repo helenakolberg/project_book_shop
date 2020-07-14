@@ -1,5 +1,9 @@
 <h1>All Genres</h1>
 
+<div>
+    <a href="/genres/new"><button>Add New Genre</button></a>
+</div>
+
 <%for genre in @genres%>
     <div>
         <a href="/genres/<%=genre.id%>/books"><%=genre.type.upcase%></a>
