@@ -20,6 +20,15 @@
         <input type="text" maxlength="255" name="description" id="description"/>
     </div>
 <br>
+   <div>
+        <label for="genre_select">Select genre:</label>
+        <select name="genre_id" id="genre_select">
+            <%for genre in @genres%>
+                <option value=<%=genre.id%>><%=genre.type.capitalize%></option>
+            <%end%>
+        </select>
+    </div>
+ <br>   
     <div>
         <label for="quantity">Quantity:</label>
         <input type="number" name="quantity" id="quantity"/>
