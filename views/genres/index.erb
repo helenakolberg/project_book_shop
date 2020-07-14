@@ -1,2 +1,6 @@
 <h1>All Genres</h1>
 
+<%for genre in @genres%>
+    <div><%=genre.type.upcase%></div>
+    <br>
+<%end%>
