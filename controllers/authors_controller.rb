@@ -40,3 +40,8 @@ post '/authors/:id' do
     author.update()
     redirect "authors/#{params['id']}"
 end
+
+get '/authors/:id/books' do
+    @author = Author.find_by_id(params['id'])
+    erb(:"authors/books")
+end

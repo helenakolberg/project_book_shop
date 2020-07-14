@@ -14,17 +14,12 @@
             <th>First name:</th>
             <td><%=author.first_name%></td>
         </tr>
-        <tr>
-            <th>Books:</th>
-            <td><%for book in author.books%>
-                    <a href="/books/<%=book.id%>"><%=book.title%></a>
-                    <br>
-                <%end%>
-            </td>
-        </tr>
     </table>
     <div>
         <a href="/authors/<%=author.id%>"><button>Author Details</button></a>
+    </div>
+    <div>
+        <a href="/authors/<%=author.id%>/books"><button>Books</button></a>
     </div>
   <hr/>  
 <%end%>    

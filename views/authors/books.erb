@@ -1,0 +1,39 @@
+<h1>Books by <%=@author.full_name%></h1>
+
+<%for book in @author.books%>
+    <table>
+        <tr>
+            <th>Title:</th>
+            <td><%=book.title%></td>
+        </tr>
+        <tr>
+            <th>Description:</th>
+            <td><%=book.description%></td>
+        </tr>
+        <tr>
+            <th>Quantity:</th>
+            <td><%=book.quantity%>
+                    <%if (book.quantity <= 5) && (book.quantity > 0)%>
+                        <%="Low stock"%>
+                    <%elsif (book.quantity == 0)%>
+                        <%="Out of stock"%>
+                    <%end%>
+            </td>
+        </tr>
+        <tr>
+            <th>Buying cost:</th>
+            <td><%=book.buying_cost%></td>
+        </tr>
+        <tr>
+            <th>Selling price:</th>
+            <td><%=book.selling_price%></td>
+        </tr>
+    </table>
+    <div>
+        <a href="/books/<%=book.id%>/edit"><button>Edit</button></a>
+    </div>
+    <div>
+        <form method="post" action="/books/<%=book.id%>/delete"><input type="submit" value="Delete"></form>
+    </div>
+    <hr/>
+<%end%>    
