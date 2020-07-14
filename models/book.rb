@@ -72,6 +72,9 @@ class Book
         return result
     end
 
-
+    def genre()
+        genre = Genre.find_by_id(@genre_id)
+        return genre
+    end
 
 end
