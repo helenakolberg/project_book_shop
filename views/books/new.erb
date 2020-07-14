@@ -10,7 +10,11 @@
         <label for="author_select">Select author:</label>
         <select name="author_id" id="author_select">
             <%for author in @authors%>
-                <option value=<%=author.id%>><%=author.full_name%></option>
+                <%if author.status == "deactivated"%>
+                    <option value=<%=author.id%> disabled><%=author.full_name%></option>
+                <%else%>
+                    <option value=<%=author.id%>><%=author.full_name%></option>
+                <%end%>
             <%end%>
         </select>
     </div>

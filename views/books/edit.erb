@@ -29,9 +29,9 @@
         <select name="genre_id" id="genre_select">
             <%for genre in @genres%>
                 <%if (genre.id == @book.genre_id)%>
-                    <option value=<%=genre.id%> selected><%=genre.type.capitalize%></option>
+                    <option value=<%=genre.id%> selected><%=genre.type%></option>
                 <%else%>
-                    <option value=<%=genre.id%>><%=genre.type.capitalize%>
+                    <option value=<%=genre.id%>><%=genre.type%>
                  <%end%>
             <%end%>
         </select>
