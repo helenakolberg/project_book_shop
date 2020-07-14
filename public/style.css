@@ -1,0 +1,9 @@
+#menu {
+    width: 160px;
+    position: fixed;
+    margin: 0 auto;
+}
+
+#content {
+    margin-left: 160px;
+}
