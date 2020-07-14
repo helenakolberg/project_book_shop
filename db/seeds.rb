@@ -5,6 +5,7 @@ require_relative('../models/genre.rb')
 
 Book.delete_all()
 Author.delete_all()
+Genre.delete_all()
 
 genre1 = Genre.new({'type' => 'modern fiction'})
 
