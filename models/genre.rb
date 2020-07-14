@@ -6,7 +6,7 @@ class Genre
     attr_accessor :type
 
     def initialize(options)
-        @id = options['id'].to if options['id']
+        @id = options['id'].to_i if options['id']
         @type = options['type']
     end
 
@@ -26,6 +26,16 @@ class Genre
         sql = "DELETE FROM genres WHERE id = $1"
         values = [@id]
         SqlRunner.run(sql, values)
+    end
+
+    def self.map_items(data)
+        return data.map { |genre| Genre.new(genre) }
+    end
+
+    def self.all()
+        sql = "SELECT * FROM genres"
+        result = SqlRunner.run(sql)
+        return self.map_items(result)
     end
 
 end
