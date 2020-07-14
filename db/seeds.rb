@@ -103,7 +103,7 @@ book2.update()
 book1.selling_price = 12.99
 book1.update()
 
-genre4.type = "biography"
+genre4.type = "Biography"
 genre4.update()
 
 
