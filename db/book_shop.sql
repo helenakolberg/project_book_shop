@@ -1,5 +1,11 @@
 DROP TABLE IF EXISTS books;
 DROP TABLE IF EXISTS authors;
+DROP TABLE IF EXISTS genres;
+
+CREATE TABLE genres (
+    id SERIAL PRIMARY KEY,
+    type VARCHAR(255)
+);
 
 CREATE TABLE authors (
     id SERIAL PRIMARY KEY,
