@@ -21,5 +21,6 @@ CREATE TABLE books (
     quantity INT,
     buying_cost FLOAT(2),
     selling_price FLOAT(2),
-    author_id INT REFERENCES authors(id)
+    author_id INT REFERENCES authors(id),
+    genre_id INT REFERENCES genres(id)
 );

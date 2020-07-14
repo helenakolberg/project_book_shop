@@ -46,7 +46,8 @@ book1 = Book.new({
     'quantity' => 10,
     'buying_cost' => 8,
     'selling_price' => 12,
-    'author_id' => author1.id
+    'author_id' => author1.id,
+    'genre_id' => genre4.id
 })
 book2 = Book.new({
     'title' => "My Brilliant Friend",
@@ -55,7 +56,8 @@ book2 = Book.new({
     'quantity' => 15,
     'buying_cost' => 9,
     'selling_price' => 15,
-    'author_id' => author2.id
+    'author_id' => author2.id,
+    'genre_id' => genre1.id
 })
 book3 = Book.new({
     'title' => "Harry Potter and the Goblet of Fire",
@@ -64,7 +66,8 @@ book3 = Book.new({
     'quantity' => 20,
     'buying_cost' => 10,
     'selling_price' => 15,
-    'author_id' => author3.id
+    'author_id' => author3.id,
+    'genre_id' => genre4.id
 })
 book4 = Book.new({
     'title' => "The Story of a New Name",
@@ -73,7 +76,8 @@ book4 = Book.new({
     'quantity' => 10,
     'buying_cost' => 9,
     'selling_price' => 15,
-    'author_id' => author2.id
+    'author_id' => author2.id,
+    'genre_id' => genre1.id
 })
 
 book1.save()
@@ -96,7 +100,7 @@ book2.update()
 book1.selling_price = 12.99
 book1.update()
 
-genre4.type = "crime"
+genre4.type = "biography"
 genre4.update()
 
 
