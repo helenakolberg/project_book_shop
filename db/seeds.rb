@@ -8,8 +8,12 @@ Author.delete_all()
 Genre.delete_all()
 
 genre1 = Genre.new({'type' => 'modern fiction'})
+genre2 = Genre.new({'type' => 'horror'})
+genre3 = Genre.new({'type' => 'romance'})
 
 genre1.save()
+genre2.save()
+genre3.save()
 
 author1 = Author.new({
     'first_name' => 'Frank',
@@ -77,6 +81,7 @@ book4.save()
 
 book3.delete()
 author3.delete()
+genre3.delete()
 
 author1.bio = "Francis McCourt (19 August 1930 – 19 July 2009) was an Irish-American teacher and writer. 
 He won a Pulitzer Prize for his book Angela's Ashes, a tragicomic memoir of the misery and squalor of his childhood."
