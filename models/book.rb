@@ -61,15 +61,14 @@ class Book
         SqlRunner.run(sql, values)
     end
 
-    def sell_book()
-        sql = "UPDATE books SET quantity = $1 WHERE id = $2"
-        values = [@quantity - 1, @id]
-        SqlRunner.run(sql, values)
-    end
-
     def author()
         author = Author.find_by_id(@author_id)
         return author
+    end
+
+    def markup()
+        result = @selling_price - @buying_cost
+        return result
     end
 
 
