@@ -1,9 +1,14 @@
 require('pry-byebug')
 require_relative('../models/author.rb')
 require_relative('../models/book.rb')
+require_relative('../models/genre.rb')
 
 Book.delete_all()
 Author.delete_all()
+
+genre1 = Genre.new({'type' => 'modern fiction'})
+
+genre1.save()
 
 author1 = Author.new({
     'first_name' => 'Frank',
