@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/book')
 require_relative('../models/author')
+require_relative('../models/genre')
 also_reload('../models/*')
 
 get '/books' do
