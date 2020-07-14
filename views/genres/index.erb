@@ -1,6 +1,8 @@
 <h1>All Genres</h1>
 
 <%for genre in @genres%>
-    <div><%=genre.type.upcase%></div>
+    <div>
+        <a href="/genres/<%=genre.id%>/books"><%=genre.type.upcase%></a>
+    </div>
     <br>
 <%end%>

@@ -8,3 +8,8 @@ get '/genres' do
     @genres = Genre.all()
     erb(:"genres/index")
 end
+
+get '/genres/:id/books' do
+    @genre = Genre.find_by_id(params['id'])
+    erb(:"genres/books")
+end
