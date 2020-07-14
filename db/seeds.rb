@@ -80,6 +80,9 @@ book2.description = "A modern masterpiece from one of Italy's most acclaimed aut
 My Brilliant Friend is a rich, intense, and generous-hearted story about two friends, Elena and Lila."
 book2.update()
 
+book1.selling_price = 12.99
+book1.update()
+
 
 binding.pry
 nil

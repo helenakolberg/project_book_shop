@@ -13,7 +13,7 @@ CREATE TABLE books (
     title VARCHAR(255),
     description VARCHAR(255),
     quantity INT,
-    buying_cost INT,
-    selling_price INT,
+    buying_cost FLOAT(2),
+    selling_price FLOAT(2),
     author_id INT REFERENCES authors(id)
 );
