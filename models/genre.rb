@@ -38,4 +38,11 @@ class Genre
         return self.map_items(result)
     end
 
+    def self.find_by_id(id)
+        sql = "SELECT * FROM genres WHERE id = $1"
+        values = [id]
+        result = SqlRunner.run(sql, values).first
+        return Genre.new(result)
+    end
+
 end
