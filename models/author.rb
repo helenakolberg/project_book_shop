@@ -3,19 +3,20 @@ require_relative('../db/sql_runner.rb')
 class Author
 
     attr_reader :id
-    attr_accessor :first_name, :last_name, :bio
+    attr_accessor :first_name, :last_name, :bio, :status
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
         @first_name = options['first_name']
         @last_name = options['last_name']
         @bio = options['bio']
+        @status = options['status']
     end
 
     def save()
-        sql = "INSERT INTO authors (first_name, last_name, bio)
-        VALUES ($1, $2, $3) RETURNING id"
-        values = [@first_name, @last_name, @bio]
+        sql = "INSERT INTO authors (first_name, last_name, bio, status)
+        VALUES ($1, $2, $3, $4) RETURNING id"
+        values = [@first_name, @last_name, @bio, @status]
         result = SqlRunner.run(sql, values)
         @id = result[0]['id'].to_i
     end
@@ -51,9 +52,9 @@ class Author
 
     def update()
         sql = "UPDATE authors SET
-        (first_name, last_name, bio) = ($1, $2, $3)
-        WHERE id = $4"
-        values = [@first_name, @last_name, @bio, @id]
+        (first_name, last_name, bio, status) = ($1, $2, $3, $4)
+        WHERE id = $5"
+        values = [@first_name, @last_name, @bio, @status, @id]
         SqlRunner.run(sql, values)
     end
 
