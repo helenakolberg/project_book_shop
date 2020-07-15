@@ -3,11 +3,14 @@
 <form method ="post" action="/books/<%=@book.id%>">
     <div>
         <label for="title">Title:</label>
+    </div>
+    <div>
         <input type="text" name="title" id="title" value="<%=@book.title%>"/>
     </div>
-<br>
     <div>
         <label for="author_select">Select author:</label>
+    </div>
+    <div>
         <select name="author_id" id="author_select">
             <%for author in @authors%>
                 <%if (author.id == @book.author_id)%>
@@ -18,14 +21,16 @@
             <%end%>
         </select>
     </div>
-<br>    
     <div>
         <label for="description">Description:</label>
-        <input type="text" maxlength="255" name="description" id="description" value="<%=@book.description%>"/>
     </div>
-<br>
+    <div>
+        <textarea type="text" maxlength="255" name="description" id="description"><%=@book.description%></textarea>
+    </div>
    <div>
         <label for="genre_select">Select genre:</label>
+    </div>
+    <div>
         <select name="genre_id" id="genre_select">
             <%for genre in @genres%>
                 <%if (genre.id == @book.genre_id)%>
@@ -36,22 +41,24 @@
             <%end%>
         </select>
     </div>
-<br>    
     <div>
         <label for="quantity">Quantity:</label>
+    </div>
+    <div>
         <input type="number" name="quantity" id="quantity" value="<%=@book.quantity%>"/>
     </div>
-<br>
     <div>
         <label for="buying_cost">Buying cost:</label>
+    </div>
+    <div>
         <input type="number" step="0.01" name="buying_cost" id="buying_cost" value="<%=@book.buying_cost%>"/>
     </div>
-<br>
     <div>
         <label for="selling_price">Selling price:</label>
+    </div>
+    <div>
         <input type="number" step="0.01" name="selling_price" id="selling_price" value="<%=@book.selling_price%>"/>
     </div>
-<br>
     <div>
         <input type="submit" value="Submit Changes">
     </div>

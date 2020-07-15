@@ -3,22 +3,27 @@
 <form method ="post" action="/authors/<%=@author.id%>">
     <div>
         <label for="last_name">Last name:</label>
-        <input type="text" name="last_name" id="last_name" value="<%=@author.last_name%>"/>
+    <div>
     </div>
-<br>    
+        <input type="text" name="last_name" id="last_name" value="<%=@author.last_name%>"/>
+    </div>  
     <div>
         <label for="first_name">First name:</label>
+    </div>  
+    <div>
         <input type="text" name="first_name" id="first_name" value="<%=@author.first_name%>"/>
     </div>
-<br>
     <div>
         <label for="bio">Bio:</label>
-        <input type="text" maxlength="255" name="bio" id="bio" value="<%=@author.bio%>"/>
+    </div>  
+    <div>
+        <textarea type="text" maxlength="255" name="bio" id="bio"><%=@author.bio%></textarea>
     </div>
-<br>
     <div>
         <label for="status_select">Select status:</label>
-        <select name="select" id="status_select">
+    </div>  
+    <div>
+        <select name="status" id="status_select">
             <option value="active" <%="selected" if @author.status == "active"%>>active</option>
             <option value="deactivated" <%="selected" if @author.status == "deactivated"%>>deactivated</option>
         </select>

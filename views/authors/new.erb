@@ -3,21 +3,26 @@
 <form method ="post" action="/authors">
     <div>
         <label for="last_name">Last name:</label>
+    </div>
+    <div>
         <input type="text" name="last_name" id="last_name"/>
     </div>
-<br>    
     <div>
         <label for="first_name">First name:</label>
+    </div>
+    <div>
         <input type="text" name="first_name" id="first_name"/>
     </div>
-<br>
     <div>
         <label for="bio">Bio:</label>
-        <input type="text" maxlength="255" name="bio" id="bio"/>
     </div>
-<br>
     <div>
-        <label for="status_select">Select status</label>
+        <textarea type="text" maxlength="255" name="bio" id="bio"></textarea>
+    </div>
+    <div>
+        <label for="status_select">Select status:</label>
+    </div>
+    <div>
         <select name="status" id="status_select">
             <option name="deactive" id="active">active</option>
             <option name="deactivated" id="deactivated">deactivated</option>
