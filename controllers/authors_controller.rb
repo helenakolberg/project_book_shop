@@ -5,7 +5,7 @@ require_relative('../models/author')
 also_reload('../models/*')
 
 get '/authors' do
-    @authors = Author.all()
+    @authors = Author.sort_alphabetically()
     erb(:"authors/index")
 end
 
