@@ -17,9 +17,9 @@
             <th>Quantity:</th>
             <td><%=@book.quantity%>
                     <%if (@book.quantity <= 5) && (@book.quantity > 0)%>
-                        <%="Low stock"%>
+                        <span class="warning"><%="Low stock"%></span>
                     <%elsif (@book.quantity == 0)%>
-                        <%="Out of stock"%>
+                        <span class="warning"><%="Out of stock"%></span>
                     <%end%>
             </td>
         </tr>
