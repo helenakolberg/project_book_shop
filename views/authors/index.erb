@@ -1,13 +1,12 @@
-<h1>All Authors</h1>
+<h1>Browse By Author</h1>
 
 <div>
     <a href="/authors/new"><button>Add New Author</button></a>
 </div>
 
 <%for author in @authors%>
-    <div>
-        <a href="/authors/<%=author.id%>/books"><%=author.last_name.upcase%>, <%=author.first_name.upcase%></a>
-        <a href="/authors/<%=author.id%>"><button>More On the Author</button></a>
-    </div>
-  <hr/>  
+    <ul id="authors-list">
+        <li><a href="/authors/<%=author.id%>/books"><%=author.last_name.upcase%>, <%=author.first_name.upcase%></a>
+        <a href="/authors/<%=author.id%>"><button>About Author</button></a></li>
+    </ul> 
 <%end%>    

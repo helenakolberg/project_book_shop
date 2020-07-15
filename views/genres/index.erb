@@ -1,12 +1,11 @@
-<h1>All Genres</h1>
+<h1>Browse By Genre</h1>
 
 <div>
     <a href="/genres/new"><button>Add New Genre</button></a>
 </div>
 
 <%for genre in @genres%>
-    <div>
-        <a href="/genres/<%=genre.id%>/books"><%=genre.type.upcase%></a>
-    </div>
-    <br>
+    <ul id="genres-list">
+        <li><a href="/genres/<%=genre.id%>/books"><%=genre.type.upcase%></a></li>
+    </ul>
 <%end%>
