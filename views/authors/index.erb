@@ -5,21 +5,9 @@
 </div>
 
 <%for author in @authors%>
-    <table>
-        <tr>
-            <th>Last name:</th>
-            <td><%=author.last_name%></td>
-        </tr>
-        <tr>
-            <th>First name:</th>
-            <td><%=author.first_name%></td>
-        </tr>
-    </table>
     <div>
-        <a href="/authors/<%=author.id%>"><button>Author Details</button></a>
-    </div>
-    <div>
-        <a href="/authors/<%=author.id%>/books"><button>Books</button></a>
+        <a href="/authors/<%=author.id%>/books"><%=author.last_name.upcase%>, <%=author.first_name.upcase%></a>
+        <a href="/authors/<%=author.id%>"><button>More On the Author</button></a>
     </div>
   <hr/>  
 <%end%>    

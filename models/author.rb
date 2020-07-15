@@ -69,4 +69,10 @@ class Author
         return "#{@first_name} #{@last_name}"
     end
 
+    def self.sort_alphabetically()
+        authors_array = Author.all()
+        authors = authors_array.sort_by { |author| author.last_name }
+        return authors
+    end
+
 end
