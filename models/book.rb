@@ -14,13 +14,14 @@ class Book
         @selling_price = options['selling_price'].to_f
         @author_id = options['author_id'].to_i
         @genre_id = options['genre_id'].to_i
+        @markup = book_markup()
     end
 
     def save()
         sql = "INSERT INTO books 
-        (title, description, quantity, buying_cost, selling_price, author_id, genre_id)
-        VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id"
-        values = [@title, @description, @quantity, @buying_cost, @selling_price, @author_id, @genre_id]
+        (title, description, quantity, buying_cost, selling_price, author_id, genre_id, markup)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id"
+        values = [@title, @description, @quantity, @buying_cost, @selling_price, @author_id, @genre_id, @markup]
         result = SqlRunner.run(sql, values)
         @id = result[0]['id'].to_i
     end
@@ -55,10 +56,10 @@ class Book
 
     def update()
         sql = "UPDATE books SET
-        (title, description, quantity, buying_cost, selling_price, author_id, genre_id)
-        = ($1, $2, $3, $4, $5, $6, $7)
-        WHERE id = $8"
-        values = [@title, @description, @quantity, @buying_cost, @selling_price, @author_id, @genre_id, @id]
+        (title, description, quantity, buying_cost, selling_price, author_id, genre_id, markup)
+        = ($1, $2, $3, $4, $5, $6, $7, $8)
+        WHERE id = $9"
+        values = [@title, @description, @quantity, @buying_cost, @selling_price, @author_id, @genre_id, (@selling_price - @buying_cost), @id]
         SqlRunner.run(sql, values)
     end
 
@@ -67,7 +68,7 @@ class Book
         return author
     end
 
-    def markup()
+    def book_markup()
         result = @selling_price - @buying_cost
         return result
     end
