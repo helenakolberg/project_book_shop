@@ -4,7 +4,7 @@ A book shop inventory with full CRUD functionality. Built using Ruby/Sinatra wit
 
 ## How To Run
 
-Terminal commands to create SQL database and tables:
+##### Terminal commands to create SQL database and tables:
 
 ```
 dropdb book_shop
@@ -18,13 +18,13 @@ createdb book_shop
 psql -d book_shop -f db/book_shop.sql
 ```
 
-Command to populate tables:
+##### Command to populate tables:
 
 ```
 ruby db/seeds.rb
 ```
 
-Command to run the server:
+##### Command to run the server:
 
 ```
 ruby app.rb
