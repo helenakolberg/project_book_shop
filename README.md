@@ -1,4 +1,4 @@
-# BOOK SHOP INVENTORY  
+# Book Shop Inventory  
 
 A book shop inventory with full CRUD functionality. Built using Ruby/Sinatra with data saved in an SQL database.
 
